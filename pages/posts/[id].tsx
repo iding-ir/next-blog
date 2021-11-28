@@ -3,6 +3,8 @@ import { GetStaticProps } from "next";
 import styles from "../../styles/Post.module.css";
 import Post from "../../components/Post/Post";
 import { IPost } from "../../types";
+import getPost from "../../utils/getPost";
+import getPosts from "../../utils/getPosts";
 
 interface IProp {
   post: IPost;
@@ -15,10 +17,7 @@ const PostPage = (props: IProp) => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const res = await fetch(
-    `https://61a36d20d5e8330017291ff7.mockapi.io/blogs/${context?.params?.id}`
-  );
-  const post = await res.json();
+  const post = await getPost(context?.params?.id as string);
 
   return {
     props: {
@@ -28,8 +27,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const getStaticPaths: any = async () => {
-  const res = await fetch(`https://61a36d20d5e8330017291ff7.mockapi.io/blogs`);
-  const posts = await res.json();
+  const posts = await getPosts();
 
   const paths = posts.map((post: IPost) => {
     return {
