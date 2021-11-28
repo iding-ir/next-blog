@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next";
 
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 import Cards from "../components/Cards/Cards";
 import { ICards } from "../types";
 import getPosts from "../utils/getPosts";

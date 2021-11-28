@@ -14,12 +14,15 @@ const Post = (props: IProps) => {
   return (
     <div className={styles.post}>
       <h2>{name}</h2>
+
       <p>{excerpt}</p>
+
       <hr />
+
       <p>{content}</p>
 
       <Link href="/">
-        <a>Go back</a>
+        <a className={styles.back}>Go back</a>
       </Link>
     </div>
   );

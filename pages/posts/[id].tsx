@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next";
 
-import styles from "../../styles/Post.module.css";
+import styles from "../../styles/Post.module.scss";
 import Post from "../../components/Post/Post";
 import { IPost } from "../../types";
 import getPost from "../../utils/getPost";

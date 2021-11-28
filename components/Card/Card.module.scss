@@ -1,8 +1,17 @@
 .card {
   padding: 1rem;
-  width: 50%;
+  margin: 0.5rem;
+  width: calc(25% - 1rem);
+  border-radius: 4px;
+  background-color: #fafafa;
+  color: #303f9f;
+  text-decoration: none;
 
   @media (max-width: 600px) {
     width: 100%;
+  }
+
+  p {
+    color: #455a64;
   }
 }

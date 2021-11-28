@@ -1,9 +1,24 @@
 .post {
   padding: 1rem;
-  margin: 1 auto;
+  margin: 0 auto;
   max-width: 840px;
+  background-color: #fafafa;
+  min-height: 100vh;
 
   @media (max-width: 600px) {
     max-width: 100%;
+  }
+
+  h2 {
+    color: #303f9f;
+  }
+
+  p {
+    color: #455a64;
+  }
+
+  .back {
+    color: #d81b60;
+    text-decoration: none;
   }
 }
