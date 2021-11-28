@@ -1,15 +1,7 @@
 import Link from "next/Link";
 
 import styles from "./Post.module.scss";
-
-export interface IPost {
-  avatar: string;
-  content: string;
-  createdAt: string;
-  excerpt: string;
-  id: string;
-  name: string;
-}
+import { IPost } from "../../types";
 
 interface IProps {
   post: IPost;
@@ -17,15 +9,15 @@ interface IProps {
 
 const Post = (props: IProps) => {
   const { post } = props;
-  const { excerpt, id, name } = post;
+  const { excerpt, content, name } = post;
 
   return (
-    <Link href={`/posts/${id}`}>
-      <a className={styles.post}>
-        <h2>{name}</h2>
-        <p>{excerpt}</p>
-      </a>
-    </Link>
+    <div className={styles.post}>
+      <h2>{name}</h2>
+      <p>{excerpt}</p>
+      <hr />
+      <p>{content}</p>
+    </div>
   );
 };
 

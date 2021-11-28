@@ -1,9 +1,6 @@
 import styles from "./Cards.module.scss";
-import Card, { ICard } from "../Card/Card";
-
-export interface ICards {
-  cards: ICard[];
-}
+import Card from "../Card/Card";
+import { ICard, ICards } from "../../types";
 
 const Cards = (props: ICards) => {
   const { cards } = props;
@@ -16,7 +13,7 @@ const Cards = (props: ICards) => {
     });
   };
 
-  return <div className={styles.posts}>{renderCards()}</div>;
+  return <div className={styles.cards}>{renderCards()}</div>;
 };
 
 export default Cards;

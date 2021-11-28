@@ -1,7 +1,8 @@
 import { GetStaticProps } from "next";
 
 import styles from "../styles/Home.module.css";
-import Cards, { ICards } from "../components/Cards/Cards";
+import Cards from "../components/Cards/Cards";
+import { ICards } from "../types";
 
 const Home = (props: ICards) => {
   const { cards } = props;

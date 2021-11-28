@@ -1,10 +1,8 @@
-.post {
+.card {
   padding: 1rem;
-  max-width: 400px;
-}
+  width: 50%;
 
-@media (max-width: 600px) {
-  .post {
+  @media (max-width: 600px) {
     width: 100%;
   }
 }

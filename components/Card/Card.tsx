@@ -1,19 +1,14 @@
 import Link from "next/Link";
 
 import styles from "./Card.module.scss";
-
-export interface ICard {
-  excerpt: string;
-  id: string;
-  name: string;
-}
+import { ICard } from "../../types";
 
 const Card = (props: ICard) => {
   const { excerpt, id, name } = props;
 
   return (
     <Link href={`/posts/${id}`}>
-      <a className={styles.post}>
+      <a className={styles.card}>
         <h2>{name}</h2>
         <p>{excerpt}</p>
       </a>
