@@ -1,5 +1,5 @@
 {
-  "name": "next.js",
+  "name": "next-blog",
   "private": true,
   "scripts": {
     "dev": "next dev",
