@@ -2,27 +2,17 @@ import styles from "./Cards.module.scss";
 import Card, { ICard } from "../Card/Card";
 
 export interface ICards {
-  posts: ICard[];
+  cards: ICard[];
 }
 
 const Cards = (props: ICards) => {
-  const { posts } = props;
+  const { cards } = props;
 
   const renderCards = () => {
-    return posts.map((post: ICard) => {
-      const { avatar, content, createdAt, excerpt, id, name } = post;
+    return cards.map((card: ICard) => {
+      const { excerpt, id, name } = card;
 
-      return (
-        <Card
-          key={id}
-          id={id}
-          avatar={avatar}
-          content={content}
-          createdAt={createdAt}
-          excerpt={excerpt}
-          name={name}
-        />
-      );
+      return <Card key={id} id={id} excerpt={excerpt} name={name} />;
     });
   };
 
