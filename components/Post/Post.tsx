@@ -17,6 +17,10 @@ const Post = (props: IProps) => {
       <p>{excerpt}</p>
       <hr />
       <p>{content}</p>
+
+      <Link href="/">
+        <a>Go back</a>
+      </Link>
     </div>
   );
 };
