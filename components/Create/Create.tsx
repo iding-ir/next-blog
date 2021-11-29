@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import createPost from "../../utils/createPost";
 
 import styles from "./Create.module.scss";
 
@@ -10,6 +11,9 @@ type Inputs = {
 };
 
 const Create = () => {
+  const [loading, setLoading] = useState(false);
+  const formRef = useRef(null);
+
   const {
     register,
     handleSubmit,
@@ -17,10 +21,30 @@ const Create = () => {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    setLoading(true);
+
+    const res = await createPost(data);
+
+    setLoading(false);
+
+    // @ts-ignore
+    formRef.current.reset();
+
+    console.log(res);
+  };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+    <form
+      ref={formRef}
+      className={styles.form}
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <div className={styles.info}>
+        Please note that regardless of your input, mockAPI.io will create a
+        random post entry.
+      </div>
+
       <input placeholder="Title" {...register("name", { required: true })} />
 
       {errors.name && (
@@ -45,7 +69,9 @@ const Create = () => {
         <div className={styles.error}>This field is required</div>
       )}
 
-      <button type="submit">Submit</button>
+      <button disabled={loading} type="submit">
+        {loading ? "Submitting..." : "Submit"}
+      </button>
     </form>
   );
 };
