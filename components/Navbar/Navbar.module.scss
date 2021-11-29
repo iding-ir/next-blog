@@ -1,0 +1,15 @@
+.nav {
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  background-color: #d81b60;
+  padding: 0 1rem;
+
+  a {
+    color: #fafafa;
+    line-height: 4rem;
+    padding: 0 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
