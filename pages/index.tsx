@@ -4,16 +4,21 @@ import styles from "../styles/Home.module.scss";
 import Cards from "../components/Cards/Cards";
 import { ICards } from "../types";
 import getPosts from "../utils/getPosts";
+import Head from "../components/Head/Head";
 
 const Home = (props: ICards) => {
   const { cards } = props;
 
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <Cards cards={cards} />
-      </main>
-    </div>
+    <>
+      <Head />
+
+      <div className={styles.container}>
+        <main className={styles.main}>
+          <Cards cards={cards} />
+        </main>
+      </div>
+    </>
   );
 };
 

@@ -5,6 +5,7 @@ import Post from "../../components/Post/Post";
 import { IPost } from "../../types";
 import getPost from "../../utils/getPost";
 import getPosts from "../../utils/getPosts";
+import Head from "../../components/Head/Head";
 
 interface IProp {
   post: IPost;
@@ -12,8 +13,15 @@ interface IProp {
 
 const PostPage = (props: IProp) => {
   const { post } = props;
+  const { name, excerpt } = post;
 
-  return <Post post={post} />;
+  return (
+    <>
+      <Head title={name} description={excerpt} />
+
+      <Post post={post} />
+    </>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
