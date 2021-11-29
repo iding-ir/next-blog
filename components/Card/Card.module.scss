@@ -1,11 +1,7 @@
 .card {
-  padding: 1rem;
-  margin: 0.5rem;
+  position: relative;
+  display: flex;
   width: calc(25% - 1rem);
-  border-radius: 4px;
-  background-color: #fafafa;
-  color: #303f9f;
-  text-decoration: none;
 
   @media (max-width: 960px) {
     width: calc(50% - 1rem);
@@ -15,7 +11,36 @@
     width: 100%;
   }
 
-  p {
-    color: #455a64;
+  .delete {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &:hover {
+    .delete {
+      display: block;
+    }
+  }
+
+  .link {
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 4px;
+    background-color: #fafafa;
+    color: #303f9f;
+    text-decoration: none;
+
+    p {
+      color: #455a64;
+    }
   }
 }
