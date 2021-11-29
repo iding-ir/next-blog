@@ -13,11 +13,7 @@ const Home = (props: ICards) => {
     <>
       <Head />
 
-      <div className={styles.container}>
-        <main className={styles.main}>
-          <Cards cards={cards} />
-        </main>
-      </div>
+      <Cards cards={cards} />
     </>
   );
 };

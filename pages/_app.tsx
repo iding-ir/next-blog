@@ -6,11 +6,13 @@ import Navbar from "../components/Navbar/Navbar";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
+    <>
       <Navbar />
 
-      <Component {...pageProps} />
-    </Layout>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 }
 

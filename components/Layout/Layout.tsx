@@ -8,7 +8,11 @@ interface IProps {
 const Layout = (props: IProps) => {
   const { children } = props;
 
-  return <div className={styles.wrapper}>{children}</div>;
+  return (
+    <div className={styles.container}>
+      <main className={styles.main}>{children}</main>
+    </div>
+  );
 };
 
 export default Layout;
