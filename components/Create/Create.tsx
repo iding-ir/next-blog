@@ -45,7 +45,7 @@ const Create = () => {
         random post entry.
       </div>
 
-      <input placeholder="Title" {...register("name", { required: true })} />
+      <input placeholder="Name" {...register("name", { required: true })} />
 
       {errors.name && (
         <div className={styles.error}>This field is required</div>
@@ -60,7 +60,7 @@ const Create = () => {
         <div className={styles.error}>This field is required</div>
       )}
 
-      <input
+      <textarea
         placeholder="Content"
         {...register("content", { required: true })}
       />

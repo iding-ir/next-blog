@@ -6,7 +6,7 @@ import { ICards } from "../types";
 import getPosts from "../utils/getPosts";
 import Head from "../components/Head/Head";
 
-const Home = (props: ICards) => {
+const HomePage = (props: ICards) => {
   const { cards } = props;
 
   return (
@@ -28,4 +28,4 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 };
 
-export default Home;
+export default HomePage;
